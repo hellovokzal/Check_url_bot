@@ -15,7 +15,7 @@ bot = telebot.TeleBot("6506417857:AAGo4jRMB4obCIUgzSZo82n1SsWLyGnqL20")
 def start(message):
     bot.send_message(message.chat.id, "Пиши команду /check <ссылка>\n/check https://google.com")
 @bot.message_handler(commands=['check'])
-def check(mesaage):
+def check(message):
     url = message.text[7:len(message.text)]
     if url[0:8] == "https://" or url[0:7] == "http://":
         check_host = t.Thread(target=check_url)
