@@ -1,6 +1,7 @@
 import requests as req
 import telebot
 import threading as t
+bot = telebot.TeleBot("6506417857:AAGo4jRMB4obCIUgzSZo82n1SsWLyGnqL20")
 
 def check_url():
     global url
@@ -10,7 +11,6 @@ def check_url():
     except:
         bot.send_message(message.chat.id, f"Url: `{url}`\nStatus code: `403 Forbidden`")
     
-bot = telebot.TeleBot("6506417857:AAGo4jRMB4obCIUgzSZo82n1SsWLyGnqL20")
 bot.message_handler(commands=['start'])
 def start(message):
     bot.send_message(message.chat.id, "Пиши команду /check <ссылка>\n/check https://google.com")
